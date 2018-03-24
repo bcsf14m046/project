@@ -1,0 +1,22 @@
+<div class='notice'>
+<%= link_to("BACK ",{:action => 'subject_choice'},:class => 'back-link') %>
+</div>
+<div class="subject show">
+<div class="subject new">
+    
+    <h2>Search by insrtructor name </h2>
+    
+
+    <%= form_for(:subject ,:url =>{:action => 'search_by_instructor'}, :method => :get) do |f| %>
+        <table summary="Subject form fields">
+        <tr>
+            <th>Name</th>
+            <td><%= f.text_field( :rollnumber) %> </td>
+        </tr>
+        
+        </table>
+        <div class="form-buttons">
+            <%= submit_tag("Search") %>
+            </div>
+        <% end %>
+        </div>

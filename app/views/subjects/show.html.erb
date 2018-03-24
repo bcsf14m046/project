@@ -1,0 +1,61 @@
+<%= link_to("<<BACK TO LIST",{:action => 'list'},:class => 'back-link') %>
+<div class="subject show">
+<h2>Show Subject</h2>
+
+
+    <table summary="Subject Detail view">
+    <tr>
+        <th>Name</th>
+        <td><%= @subject.name %> </td>
+    </tr>
+    <tr>
+    <th>Creator</th>
+        <td><%= @subject.rollnumber %> </td>
+    </tr>
+    <tr>
+         <th>Position</th>
+        <td><%= @subject.position %> </td>
+     </tr>
+     <tr>
+        <th>Visibility</th>
+        <td><%= @subject.visible ? 'true' : 'false' %> </td>
+    </tr>
+    <tr>
+    <th>Created</th>
+    <td><%= @subject.created_at %> </td>
+    </tr>
+    <tr>
+    <th>Updated</th>
+    <td><%= @subject.updated_at %> </td>
+    </tr>
+
+    </table>
+
+    <div class="Ann_ment"><%= pluralize(@announcement.size,'Announcements') %> found </div>    
+    <table class="show" summary="Subject lists">
+    <tr class="header">
+        <th>ID</th>
+        <th>Subject</th>
+        <th>Announcement</th>
+    </tr>
+    <% @announcement.each do |f| %>
+        <tr class="<%=cycle('odd','even') %>">
+   
+        <td><%= f.id %> </td>
+        <td><%= f.Subject_ID %> </td>
+        <td><%= f.Announcements %> </td>
+        <% end %>
+     </table
+
+     <%= link_to("",{ :controller => 'announcement', :action => 'new'},:class => 'action show') %>
+     <%= link_to("Make Quizes",{:action => 'show'},:class => 'action show') %>
+     <%= link_to("Make Announcement",{:controller=>'announcement',:action => 'new'},:class => 'action show') %>
+     <%= link_to("Show Requests",{:controller=>'announcement',:action => 'show',:id =>@subject.position},:class => 'action show') %>
+     <%= link_to("Show Students",{:controller=>'announcement',:action => 'showstd',:id =>@subject.position},:class => 'action show') %>
+     
+     <%= form_for(:subject ,:url =>{:action => 'create'}, :method => :get) do |f| %>
+       
+       
+        <% end %>
+    
+</div>

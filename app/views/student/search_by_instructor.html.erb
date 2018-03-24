@@ -1,0 +1,32 @@
+<div class="subject class">
+
+    <div class="notice"><%= pluralize(@subject.size,'subject') %> found </div>
+    <table class="show" summary="Subject lists">
+    <tr class="header">
+        <th>Code</th>
+        <th>Creator</th>
+        <th>Subject  </th>
+        <th>Visible</th>
+        <th>ACTIONS</th>
+       
+    </tr>
+    <% @subject.each do |subject| %>
+        <tr class="<%=cycle('odd','even') %>">
+   
+        <td><%= subject.position %> </td>
+        <td><%= subject.rollnumber %> </td>
+        <td><%= subject.name %> </td>
+        <td class="center"><%= subject.visible ? 'Yes' : 'No' %></td>
+        <td class "actions">
+        <%= link_to("ADD Subject",{:action => 'show',:id =>subject.position},:class => 'action show') %>
+        </td> 
+        </tr>
+        <% end %>
+     </table
+            
+     
+
+</div>
+<div class="notice">
+<%= link_to 'LOGOUT',{:controller=>'signups',:action => 'haider'}, method: :post %>
+</div>

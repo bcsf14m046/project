@@ -1,0 +1,50 @@
+
+<div class="notice"
+<%= flash[:notice] %>
+<div class="notice">
+
+
+
+<%= link_to("BACK",{:action => 'new'},:class => 'create-subject') %>
+</div>
+<div class="notice">
+
+
+
+<%= link_to("ADD NEW SUBJECT",{:action => 'create'},:class => 'create-subject') %>
+</div>
+
+
+<div class="subject class">
+    <h2>         </h2>
+    <table class="show" summary="Subject lists">
+    <div><%= pluralize(@temp.size,'subject') %> found </div>
+    <tr class="header">
+        <th>ID</th>
+        <th>Instructor</th>
+        <th>Subject Code  </th>  
+    </tr>
+    <% @temp.each do |subject| %>
+        <tr class="<%=cycle('odd','even') %>">
+   
+        <td><%= subject.id %> </td>
+        <td><%= subject.instructor %> </td>
+        <td><%= subject.Subject_ID %> </td>
+        <td class "actions">
+        <%= link_to("DELETE",{:action => 'delete_subject_student', :id => subject.id},:class => 'action delete') %>
+        <%= link_to("Show Subject",{:action => 'subject_detail', :id => subject.id},:class => 'action delete') %>
+        </td> 
+        </tr>
+        <% end %>
+     </table
+            
+     
+
+</div>
+<div class="notice">
+
+
+
+
+<%= link_to 'LOGOUT',{:controller=>'signups',:action => 'haider'}, method: :post %>
+</div>

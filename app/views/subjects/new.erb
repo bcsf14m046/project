@@ -1,0 +1,29 @@
+<div class='notice'>
+<%= link_to("<<BACK TO LIST",{:action => 'list'},:class => 'back-link') %>
+</div>
+<div class="subject show">
+<div class="subject new">
+    
+    <h2>Create Subject </h2>
+    
+
+    <%= form_for(:subject ,:url =>{:action => 'create'}, :method => :get) do |f| %>
+        <table summary="Subject form fields">
+        <tr>
+            <th>Name</th>
+            <td><%= f.text_field( :name) %> </td>
+        </tr>
+        <tr>
+             <th>Code</th>
+            <td><%= f.text_field( :position) %> </td>
+         </tr>
+         <tr>
+            <th>Visibility</th>
+            <td><%= f.check_box( :visible) %> </td>
+        </tr>
+        </table>
+        <div class="form-buttons">
+            <%= submit_tag("Create Subject") %>
+            </div>
+        <% end %>
+        </div>

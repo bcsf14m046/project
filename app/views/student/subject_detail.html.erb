@@ -1,0 +1,41 @@
+<%= link_to("BACK",{:action => 'new'},:class => 'back-link') %>
+<div class="subject show">
+<h2>Show Subject</h2>
+
+
+    <table summary="Subject Detail view">
+    <tr>
+        <th>Name</th>
+        <td><%= @subject[0].name %> </td>
+    </tr>
+    <tr>
+    <th>Creator</th>
+        <td><%= @subject[0].rollnumber %> </td>
+    </tr>
+    <tr>
+         <th>Position</th>
+        <td><%= @subject[0].position %> </td>
+     </tr>
+     
+    
+
+    </table>
+
+    <div class="Ann_ment"><%= pluralize(@announcement.size,'Announcements') %> found </div>    
+    <table class="show" summary="Subject lists">
+    <tr class="header">
+        <th>ID</th>
+        <th>Subject</th>
+        <th>Announcement</th>
+    </tr>
+    <% @announcement.each do |f| %>
+        <tr class="<%=cycle('odd','even') %>">
+   
+        <td><%= f.id %> </td>
+        <td><%= f.Subject_ID %> </td>
+        <td><%= f.Announcements %> </td>
+        <% end %>
+     </table
+
+    
+</div>

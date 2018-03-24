@@ -1,0 +1,29 @@
+<div class="subject class">
+
+    <div class="notice"><%= pluralize(@req.size,'requests') %> found </div>
+    <table class="show" summary="Requests lists">
+    <tr class="header">
+        <th>Subject Code</th>
+        <th>Rollnumber</th>
+       
+       
+    </tr>
+    <% @req.each do |request| %>
+        <tr class="<%=cycle('odd','even') %>">
+   
+        <td><%= request.Subject_ID %> </td>
+        <td><%= request.User %> </td>
+        
+        <td class "actions">
+        <%= link_to("ADD Student",{:action => 'show1',:subject_id =>request.Subject_ID,:us=>request.User},:class => 'action show') %>
+        </td> 
+        </tr>
+        <% end %>
+     </table
+            
+     
+
+</div>
+<div class="notice">
+<%= link_to 'LOGOUT',{:controller=>'signups',:action => 'haider'}, method: :post %>
+</div>

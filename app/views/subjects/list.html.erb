@@ -1,0 +1,47 @@
+
+<div class="notice"
+<%= flash[:notice] %>
+
+</div>
+
+<h2 text-align="center"><center>Welcome to the Teacher's Pannel </h2><h1><center><%= @roll %></h2>
+
+
+<div class="subject class">
+
+    <h2><div><%= pluralize(@subjects.size,'subject') %> found </div></h2>
+    <table class="show" summary="Subject lists">
+    <tr class="header">
+        <th>Code</th>
+        <th>Creator</th>
+        <th>Subject  </th>
+        <th>Visible</th>
+        <th>ACTIONS</th>
+       
+    </tr>
+    <% @subjects.each do |subject| %>
+        <tr class="<%=cycle('odd','even') %>">
+   
+        <td><%= subject.position %> </td>
+        <td><%= subject.rollnumber %> </td>
+        <td><%= subject.name %> </td>
+        <td class="center"><%= subject.visible ? 'Yes' : 'No' %></td>
+        <td class "actions">
+        <%= link_to("Show",{:action => 'show',:id =>subject.id},:class => 'action show') %>
+        <%= link_to("EDIT",{:action => 'edit',:id =>subject.id},:class => 'action edit') %>
+        <%= link_to("DELETE",{:action => 'delete', :id => subject.id},:class => 'action delete') %>
+        </td> 
+        </tr>
+        <% end %>
+     </table
+    
+     
+
+</div>
+<form method="get" action="new">
+<button align="right" type="submit">ADD NEW SUBJECT</button>
+</form>
+<form method="get" controller="signups" action="/signups/haider">
+<button aling="right" type="submit">ADD NEW SUBJECT</button>
+</form>
+

@@ -1,0 +1,30 @@
+<h2>Select your option... </h2>
+<div class="notice">
+
+
+
+<%= link_to("BACK",{:action => 'new'},:class => 'create-subject') %>
+</div>
+<div class="notice">
+
+
+
+<%= link_to("Show all Subjects",{:action => 'create'},:class => 'create-subject') %>
+</div>
+<div class="notice"
+
+
+
+<%= link_to("",{:action => 'show_subject'},:class => 'create-subject') %>
+<%= link_to("Search Subject by Instructor name",{:action => 'search_instructor'},:class => 'create-subject') %>
+
+</div>
+<div class="notice">
+<%= link_to("Search Subject by Subject Code",{:action => 'search_code'},:class => 'create-subject') %>
+
+
+
+</div>
+
+
+<%= link_to 'LOGOUT',{:controller=>'signups',:action => 'haider'}, method: :post %>

@@ -1,0 +1,2 @@
+class Stdlist < ApplicationRecord
+end

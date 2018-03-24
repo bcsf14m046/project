@@ -1,0 +1,20 @@
+<div class='notice'>
+<%= link_to("<<BACK TO LIST",{ :controller => 'subjects', :action => 'list'},:class => 'back-link') %>
+</div>
+<div class="subject show">
+<div class="subject new">
+    <h2>Make Announcement</h2>
+   <% :position %>
+    <%= form_for(:announcement ,:url =>{:action => 'create'}, :method => :get) do |f| %>
+        <table summary="Subject form fields">
+        <tr>
+            <th>Announcement </th>
+            <td><%= f.text_area( :Announcements) %> </td>
+        </tr>
+        
+        </table>
+        <div class="form-buttons">
+            <%= submit_tag("Make Announcements") %>
+            </div>
+        <% end %>
+        </div>

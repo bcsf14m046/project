@@ -1,0 +1,31 @@
+<div class="subject class">
+
+    <div class="notice"><%= pluralize(@std.size,'students') %> found </div>
+    <table class="show" summary="Subject lists">
+    <tr class="header">
+        <th>ID</th>
+        <th>Subject Code</th>
+        <th>Rollnumber</th>
+        
+       
+    </tr>
+    <% @std.each do |student| %>
+        <tr class="<%=cycle('odd','even') %>">
+   
+        <td><%= student.id %> </td>
+        <td><%= student.Subject_ID %> </td>
+        <td><%= student.Rollnumber %> </td>
+        
+        <td class "actions">
+        <%= link_to("Remove Student",{:action => 'remove_from_subject_list',:id =>student.id},:class => 'action show') %>
+        </td> 
+        </tr>
+        <% end %>
+     </table
+            
+     
+
+</div>
+<div class="notice">
+<%= link_to 'LOGOUT',{:controller=>'signups',:action => 'haider'}, method: :post %>
+</div>
